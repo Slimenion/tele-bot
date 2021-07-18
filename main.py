@@ -1,4 +1,7 @@
+import time
+
 import telebot
+import parsrer
 
 from config import BOT_TOKEN, admin_id
 from phrases import rules_action, badAnswer
@@ -20,14 +23,13 @@ def rules(message):
 
 
 @bot.message_handler(content_types=['text'])
-def rules(message):
+def quote(message):
     id = message.chat.id
     msg = message.text
-
     if msg == 'Правила' or msg == 'правила' or msg == 'rules' or msg == 'Rules':
         send(id, rules_action)
-    else:
-        send(id, badAnswer)
+    if msg == 'Цитата' or msg == 'цитата':
+        send(id, parsrer.parse())
 
 
 bot.polling(none_stop=True)
