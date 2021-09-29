@@ -1,2 +1,3 @@
 # tele-bot
-Бот для telegram выдающий рандомные цитаты.
+
+#### A bot for telegram that produces random quotes in Russian.
